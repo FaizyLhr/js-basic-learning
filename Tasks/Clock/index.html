@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Clock</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body onload="updateClock(); setInterval('updateClock()',1000)">
+		<!-- Time Clock Section -->
+		<section>
+			<div class="container text-center">
+				<div id="clock" class="m-2 p-3 clock">
+					<div class="bg-warning m-3">
+						<b>Current Time</b>
+					</div>
+					<b id="clockTime" class="p-5"></b>
+				</div>
+				<div class="allbtns">
+					<button
+						onclick="alarmSet()"
+						id="alarmBtn"
+						class="btn btn-lg btn-secondary m-2"
+					>
+						Set Alarm
+					</button>
+					<button
+						onclick="stopWatchCall()"
+						class="btn btn-lg btn-secondary m-2"
+					>
+						Stop Watch
+					</button>
+				</div>
+				<hr />
+			</div>
+		</section>
+		<!-- Time Clock Section Ends -->
+
+		<!-- Alarm Clock Section -->
+		<section id="alarmSetSection">
+			<div class="container text-center">
+				<div class="clock bg-warning">
+					<b>Set Alarm</b>
+				</div>
+				<div id="alarmbtns" class="m-5">
+					<b class="">Select Time :</b>
+					<input type="time" name="time" value="00:00" id="timepicker" />
+				</div>
+				<div class="m-4">
+					<button
+						id="addAlarmBtn"
+						onclick="addAlarmFun()"
+						class="btn btn-lg btn-secondary"
+					>
+						Add Alam
+					</button>
+				</div>
+				<hr />
+				<b class="clock bg-info p-2">Alarms</b>
+				<div id="alarmDiv" class="alarmDiv"></div>
+				<button onclick="clearAlarm()" class="btn btn-secondary m-4 btn-lg">Clear All</button>
+				<audio id="audioRing" controls>
+					<source
+						src="/Tasks/Clock/mixkit-facility-alarm-sound-999.mp3"
+						type="audio/ogg"
+					/>
+				</audio>
+
+				<hr />
+			</div>
+		</section>
+		<!-- Alarm Clock Section Ends -->
+
+		<!-- Stop Watch Section -->
+		<section id="stopWatchSection">
+			<div class="container text-center">
+				<div class="clock bg-warning">
+					<b>Stop Watch</b>
+				</div>
+				<div id="clockDisplay" class="m-3">
+					<b id="displayClockTime" class="p-5 clock"> 00:00:00 </b>
+				</div>
+				<div class="allbtns">
+					<button
+						onclick="startStop()"
+						id="TimerBtn"
+						class="btn btn-secondary mx-5 p-2"
+					>
+						Start Timer
+					</button>
+					<button
+						onclick="resetTime()"
+						id="resetTimeBtn"
+						class="btn btn-secondary mx-5 my-2 p-2"
+					>
+						Reset Time
+					</button>
+				</div>
+			</div>
+		</section>
+		<!-- Stop Watch Section Ends -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+		<script src="index.js"></script>
+	</body>
+</html>

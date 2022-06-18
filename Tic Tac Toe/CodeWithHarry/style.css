@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+
+:root {
+	--oxygenfont: "Oxygen", sans-serif;
+	--bgcolor: #56baed;
+	--bgwhite: #fff;
+}
+
+* {
+	 /* margin: 0;
+	padding: 0;  */
+	box-sizing: border-box;
+	font-family: var(--oxygenfont);
+}
+
+body {
+	background: var(--bgcolor);
+}
+
+.playBoard,
+.selectBox,
+.resultBox {
+	position: absolute;
+	/* top: 0;
+	left: 0; */
+	transform: translate(5em, 5em);
+	transition: all 0.3s ease;
+}
+.selectBox {
+	background: var(--bgwhite);
+	padding: 20px 25px 25px;
+	border-radius: 5px;
+	/* display: none; */
+}
+.selectBox.hide {
+	transform: translate(5em, 5em) scale(0.9);
+	opacity: 0;
+	pointer-events: none;
+}
+.selectBox h1 {
+	font-size: 23px;
+	font-weight: 600;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.selectBox .title {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 20px 0;
+}
+.selectBox .options {
+	display: flex;
+	width: 100%;
+}
+.options button {
+	font-weight: 500;
+	font-size: 18px;
+	padding: 8px 0;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: var(--bgcolor);
+	border-radius: 5px;
+	color: var(--bgwhite);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.options button:hover,
+.resultBox .btn button:hover {
+	transform: scale(0.9);
+}
+.options button.playerX {
+	margin-right: 5px;
+}
+.options button.playerO {
+	margin-left: 5px;
+}
+.playBoard {
+	transform: translate(0, 0em) scale(0.9);
+	opacity: 0;
+	pointer-events: none;
+}
+.playBoard.show {
+	transform: translate(5em, 5em) scale(1);
+	opacity: 1;
+	pointer-events: auto;
+}
+.playBoard .playArea {
+	margin-top: 5px;
+}
+.playBoard .details .players {
+	display: flex;
+	width: 100%;
+	position: relative;
+	justify-content: space-around;
+}
+.players.active span:first-child {
+	color: var(--bgcolor);
+	background: var(--bgwhite);
+}
+.players.active span:nth-child(2) {
+	color: var(--bgwhite);
+	background: var(--bgcolor);
+}
+.players.active .slider {
+	left: 50%;
+}
+.playBoard .details span {
+	background: var(--bgwhite);
+	width: 100%;
+	border-radius: 5px;
+	padding: 7px 0;
+	position: relative;
+	z-index: 5;
+	font-size: 19px;
+	color: var(--bgcolor);
+	font-weight: 500;
+	cursor: default;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+.details span:first-child {
+	background: var(--bgcolor);
+	/* color: white; */
+	color: var(--bgwhite);
+}
+.details .slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	z-index: 2;
+	background: var(--bgcolor);
+}
+.playBoard .details {
+	background: var(--bgwhite);
+	padding: 7px;
+	border-radius: 5px;
+}
+.playBoard section {
+	display: flex;
+}
+.playBoard section span {
+	display: block;
+	margin: 2px;
+	border-radius: 5px;
+	height: 80px;
+	width: 80px;
+	background: var(--bgwhite);
+	font-size: 40px;
+	text-align: center;
+	line-height: 80px;
+	color: var(--bgcolor);
+}
+.resultBox {
+	background: var(--bgwhite);
+	padding: 20px;
+	min-width: 350px;
+	/* width: 100%; */
+	border-radius: 5px;
+	/* display: none; */
+	transform: translate(5em, 5em) scale(0.9);
+	opacity: 0;
+	pointer-events: none;
+}
+.resultBox.show {
+	transform: translate(5em, 5em) scale(1);
+	opacity: 1;
+	max-width: 50%;
+	/* background-color: black; */
+	pointer-events: auto;
+}
+.resultBox .wonText {
+	font-size: 25px;
+	justify-content: center;
+	font-weight: 500;
+	display: flex;
+}
+.resultBox .wonText p {
+	font-weight: 600;
+	margin: 0 5px;
+}
+
+.resultBox .btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.resultBox .btn button {
+	font-weight: 500;
+	font-size: 18px;
+	padding: 8px 20px;
+	border: none;
+	outline: none;
+	background: var(--bgcolor);
+	border-radius: 5px;
+	color: var(--bgwhite);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}

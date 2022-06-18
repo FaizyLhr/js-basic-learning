@@ -1,0 +1,4 @@
+Faizy is a
+beginner 
+to 
+JS

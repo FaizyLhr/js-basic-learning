@@ -1,0 +1,15 @@
+.clock {
+	font-size: 3em;
+}
+#alarmbtns {
+	font-size: 2em;
+}
+#audioRing {
+	display: none;
+}
+#alarmDiv
+{
+	font-size: 2em;
+	text-align: left;
+	margin-left: 10%;
+}
